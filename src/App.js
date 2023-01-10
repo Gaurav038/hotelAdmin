@@ -3,6 +3,10 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { DarkModeContext } from "./context/darkModeContext";
 import './App.css';
 import { AuthContext } from './context/AuthContext';
+import Login from "./pages/login/Login"
+import Home from './pages/home/Home';
+import List from "./pages/list/List.js";
+
 
 function App() {
 
@@ -22,25 +26,33 @@ function App() {
      <Routes>
           <Route path="/">
             <Route path="login" element={<Login />} />
+            <Route
+              index
+              element={
+                <ProtectedRoute>
+                  <Home />
+                </ProtectedRoute>
+              }
+            />
             <Route path="users">
               <Route
                 index
                 element={
                   <ProtectedRoute>
-                    <List columns={userColumns} />
+                    <List />
                   </ProtectedRoute>
                 }
               />
-              <Route
+              {/* <Route
                 path="new"
                 element={
                   <ProtectedRoute>
                     <New inputs={userInputs} title="Add New User" />
                   </ProtectedRoute>
                 }
-              />
+              /> */}
             </Route>
-            <Route path="hotels">
+            {/* <Route path="hotels">
               <Route
                 index
                 element={
@@ -75,7 +87,7 @@ function App() {
                   </ProtectedRoute>
                 }
               />
-            </Route>
+            </Route> */}
           </Route>
         </Routes>
       </BrowserRouter>

@@ -8,24 +8,24 @@
     border-radius: 10px;
     height: 100px;
 }
-    .left,
+.widget .left,
     .right {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
-      .title {
+    .widget .title {
         font-weight: bold;
         font-size: 14px;
         color: rgb(160, 160, 160);
       }
   
-      .counter {
+      .widget .counter {
         font-size: 28px;
         font-weight: 300;
       }
   
-      .link {
+      .widget .link {
         width: max-content;
         font-size: 12px;
         border-bottom: 1px solid gray;
@@ -44,7 +44,7 @@
         }
       
   
-      .icon {
+        .widget .icon {
         font-size: 18px;
         padding: 5px;
         border-radius: 5px;

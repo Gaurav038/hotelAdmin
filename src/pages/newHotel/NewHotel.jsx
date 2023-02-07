@@ -4,25 +4,14 @@ import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUpload
 import { useState } from "react";
 import axios from "axios";
 import { hotelInputs } from "../../formSource";
-import useFetch from "../../hooks/useFetch";
 
 const NewHotel = () => {
 
     const [files, setFiles] = useState()
     const [info, setInfo] = useState({})
-    const [rooms, setRooms] = useState([])
-    const {data, loading, error} = useFetch("/rooms")
 
     const handleChange = (e) => {
         setInfo((prev) => ({...prev, [e.target.id]: e.target.value}))
-    }
-
-    const handleSelect = (e) => {
-        const value = Array.from(
-            e.target.selectedOptions, 
-            (option) => option.value
-        ) 
-        setRooms(value)
     }
 
     const handleClick = async(e) => {
@@ -49,7 +38,6 @@ const NewHotel = () => {
             
             const newhotel = {
                 ...info,
-                rooms,
                 photos: list
             }
             await axios.post("/hotels", newhotel)
@@ -107,14 +95,6 @@ const NewHotel = () => {
                                     <select id="featured" onChange={handleChange} >
                                         <option value={false} >No</option>
                                         <option value={true} >Yes</option>
-                                    </select>
-                            </div>
-                            <div className="selectRooms">
-                                    <label>Rooms</label>
-                                    <select id="rooms" multiple onChange={handleSelect} >
-                                        {loading ? "loading" : data && data.map(room => (
-                                            <option key={room._id} value={room._id} >{room.title}</option>
-                                        ))}
                                     </select>
                             </div>
                             <button onClick={handleClick} >Send</button>

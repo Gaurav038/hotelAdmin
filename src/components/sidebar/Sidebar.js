@@ -1,15 +1,20 @@
 import "./sidebar.css";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
-import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import CreditCardIcon from "@mui/icons-material/CreditCard";
 import StoreIcon from "@mui/icons-material/Store";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
-import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
-import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { Link,  useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
+
+  const navigate = useNavigate();
+
+  const logOutFunct = () => {
+    localStorage.removeItem('user');
+    navigate("/login")
+  }
+
   return (
     <div className="sidebar">
       <div className="center">
@@ -34,22 +39,16 @@ const Sidebar = () => {
               <span>Hotels</span>
             </li>
           </Link>
-          <Link to="/rooms" style={{ textDecoration: "none" }}>
+          <Link to="/booking" style={{ textDecoration: "none" }}>
             <li>
               <CreditCardIcon className="icon" />
-              <span>Rooms</span>
+              <span>Bookings</span>
             </li>
           </Link>
-          <li>
-            <LocalShippingIcon className="icon" />
-            <span>Delivery</span>
-          </li>
+         
           <p className="title">USER</p>
-          <li>
-            <AccountCircleOutlinedIcon className="icon" />
-            <span>Profile</span>
-          </li>
-          <li>
+      
+          <li onClick={logOutFunct}>
             <ExitToAppIcon className="icon" />
             <span>Logout</span>
           </li>

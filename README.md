@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# MERNHotelBooking
+MERN Stack Hotel Booking App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Technology** - MongoDB Express React NodeJs
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+##  ➤ Run Server [NodeJs at server folder]
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##### Stripe API Key Configuration
 
-### `npm test`
+Please edit **controllers/booking.js** and put your stripe **private api key**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img src="https://github.com/ongyishen/MERNHotelBooking/blob/main/StripePrivateAPIKey.PNG?raw=true" />
 
-### `npm run build`
+execute following command
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm i
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+start the server
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+nodemon server
+```
 
-### `npm run eject`
+##### npm package use:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- bcryptjs
+- cookie-parser
+- cors
+- dotenv
+- express
+- jsonwebtoken
+- mongoose
+- moment
+- nodemon
+- stripe
+- uuid
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#table-of-contents)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## ➤  Run Client [ReactJs at client folder]
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Server API Configuration
 
-## Learn More
+Please edit the **package.js** to correct Server API URL
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<img src="https://github.com/ongyishen/MERNHotelBooking/blob/main/ClientServerProxy.PNG?raw=true" />
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+##### Stripe API Key Configuration
 
-### Code Splitting
+Please edit Bookingscreen.js and put your stripe **public api key**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<img src="https://github.com/ongyishen/MERNHotelBooking/blob/main/StripePublicAPIKey.PNG?raw=true" />
 
-### Analyzing the Bundle Size
+execute following command
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm i
+```
 
-### Making a Progressive Web App
+start the client
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+npm start
+```
 
-### Advanced Configuration
+## Admin Page npm package use:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- material UI
+- axios
+- react-router-dom
 
-### Deployment
+Admin can see all the users , hotels and booking details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Users Page npm package use:
 
-### `npm run build` fails to minify
+- axios
+- react-router-dom
+- antd
+- moment
+- react-router-dom
+- react-stripe-checkout
+- sweetalert2
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)](#table-of-contents)
+## Sample Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+#### Profile
+
+<img src="https://github.com/ongyishen/MERNHotelBooking/blob/main/SampleCancel.gif?raw=true" />
+

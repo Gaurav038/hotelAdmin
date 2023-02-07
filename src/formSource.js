@@ -80,6 +80,12 @@ export const userInputs = [
       placeholder: "description",
     },
     {
+      id: "maxPeople",
+      label: "Maximum People",
+      type: "number",
+      placeholder: "1 to 6",
+    },
+    {
       id: "cheapestPrice",
       label: "Price",
       type: "text",
@@ -87,29 +93,4 @@ export const userInputs = [
     },
   ];
   
-  export const roomInputs = [
-    {
-      id: "title",
-      label: "Title",
-      type: "text",
-      placeholder: "2 bed room",
-    },
-    {
-      id: "desc",
-      label: "Description",
-      type: "text",
-      placeholder: "King size bed, 1 bathroom",
-    },
-    {
-      id: "price",
-      label: "Price",
-      type: "number",
-      placeholder: "100",
-    },
-    {
-      id: "maxPeople",
-      label: "Max People",
-      type: "number",
-      placeholder: "2",
-    },
-  ];
+  

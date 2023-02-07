@@ -15,52 +15,22 @@ const Datatable = ({columns}) => {
   setList(data)
   }, [data])
 
-  const handleDelete = async(id) => {
-    try {
-      await axios.delete(`/${path}/${id}`)
-      setList(List.filter((item) => item._id !== id));
-    } catch (error) {
-      
-    }
-  };
-
-  const actionColumn = [
-    {
-      field: "action",
-      headerName: "Action",
-      width: 200,
-      renderCell: (params) => {
-        return (
-          <div className="cellAction">
-            {path !== "rooms" ?
-            <div
-              className="deleteButton"
-              onClick={() => handleDelete(params.row._id)}
-            >
-              Delete
-            </div>
-            : <div style={{color: 'darkblue'}} >No action</div> 
-          }
-          </div>
-        );
-      },
-    },
-  ];
+  
   return (
     <div className="datatable">
       <div className="datatableTitle">
        All {path} List
-        <Link to={`/${path}/new`} className="link">
+        {path !== 'booking' && <Link to={`/${path}/new`} className="link">
           Add New
-        </Link>
+        </Link>}
       </div>
+
       <DataGrid
         className="datagrid"
         rows={List}
-        columns={columns.concat(actionColumn)}
+        columns={columns}
         pageSize={9}
         rowsPerPageOptions={[9]}
-        checkboxSelection
         getRowId={row => row._id}
       />
     </div>

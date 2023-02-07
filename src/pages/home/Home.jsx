@@ -1,6 +1,8 @@
 import Sidebar from "../../components/sidebar/Sidebar.js";
 import "./home.css";
 import Widget from "../../components/widget/Widget.js";
+import Widget2 from "../../components/widget/Widget2.js";
+import Widget3 from "../../components/widget/Widget3.js";
 
 const Home = () => {
     return (
@@ -8,10 +10,9 @@ const Home = () => {
         <Sidebar />
         <div className="homeContainer">
           <div className="widgets">
-            <Widget type="user" />
-            <Widget type="order" />
-            <Widget type="earning" />
-            <Widget type="balance" />
+            <Widget />
+            <Widget2 />
+            <Widget3 />
           </div>
         </div>
       </div>

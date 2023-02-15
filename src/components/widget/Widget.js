@@ -4,12 +4,13 @@ import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import { useEffect, useState } from "react";
 import axios from "axios"
 import { Link } from "react-router-dom";
+import { BASE_URL } from "../../API";
 
 const Widget = () => {
   const [data, setData] = useState();
 
    async function getData(){
-      const res = (await axios.get("/users/count")).data
+      const res = (await axios.get(`${BASE_URL}/users/count`)).data
       setData(res)
     } 
 

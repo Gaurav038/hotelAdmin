@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { BASE_URL } from "../API";
 
 const useFetch = (url) => {
     const [data, setData] = useState([]);
@@ -10,7 +11,7 @@ const useFetch = (url) => {
         const fetchData = async ()=>{
             setLoading(true)
             try {
-                const res = await axios.get(url)
+                const res = await axios.get(`${BASE_URL}${url}`)
                 setData(res.data)
             } catch (error) {
                 setError(error)

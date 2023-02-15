@@ -4,6 +4,7 @@ import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUpload
 import { useState } from "react";
 import axios from "axios";
 import { userInputs } from "../../formSource";
+import { BASE_URL } from "../../API";
 
 const NewUser = () => {
 
@@ -32,7 +33,7 @@ const NewUser = () => {
                 ...info,
                 img: url
             }
-            await axios.post("/auth/register", newUser)
+            await axios.post(`${BASE_URL}/auth/register`, newUser)
         } catch (error) {
             console.log(error)
         }

@@ -4,12 +4,13 @@ import BeenhereIcon from '@mui/icons-material/Beenhere';
 import { useEffect, useState } from "react";
 import axios from "axios"
 import { Link } from "react-router-dom";
+import { BASE_URL } from "../../API";
 
 const Widget3 = () => {
   const [data, setData] = useState();
 
    async function getData(){
-      const res = (await axios.get("/booking/count")).data
+      const res = (await axios.get(`${BASE_URL}/booking/count`)).data
       setData(res)
     } 
 

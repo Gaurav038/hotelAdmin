@@ -4,12 +4,13 @@ import LocalHotelIcon from '@mui/icons-material/LocalHotel';
 import { useEffect, useState } from "react";
 import axios from "axios"
 import { Link } from "react-router-dom";
+import { BASE_URL } from "../../API";
 
 const Widget2 = () => {
   const [data, setData] = useState();
 
    async function getData(){
-      const res = (await axios.get("/hotels/count")).data
+      const res = (await axios.get(`${BASE_URL}/hotels/count`)).data
       setData(res)
     } 
 

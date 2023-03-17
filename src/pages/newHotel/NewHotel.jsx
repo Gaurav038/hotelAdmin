@@ -45,7 +45,7 @@ const NewHotel = () => {
                 ...info,
                 photos: list
             }
-            await axios.post(`${BASE_URL}/hotels`, newhotel)
+            await axios.post(`${BASE_URL}/hotels`, newhotel, {withCredentials: true, credentials: 'include'})
         } catch (error) {
             console.log(error)
         }
